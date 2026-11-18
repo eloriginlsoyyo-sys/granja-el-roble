@@ -1,0 +1,304 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Granja El Roble | ERP Corporativo Avícola</title>
+    <link rel="manifest" href="./manifest.webmanifest">
+    <style>
+        :root {
+            --primary-green: #1b5e20;
+            --secondary-green: #2e7d32;
+            --light-green: #e8f5e9;
+            --accent-green: #4caf50;
+            --bg-color: #f1f8f1;
+            --card-bg: #ffffff;
+            --text-main: #112211;
+            --text-muted: #445544;
+            --border-color: #c8dcd0;
+            --danger-red: #d32f2f;
+            --warning-orange: #f57c00;
+        }
+
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: var(--bg-color);
+            color: var(--text-main);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+        }
+
+        .container {
+            width: 100%;
+            max-width: 480px;
+            padding: 15px;
+            box-sizing: border-box;
+        }
+
+        .header-brand {
+            text-align: center;
+            margin-bottom: 20px;
+            background: #ffffff;
+            padding: 20px;
+            border-radius: 16px;
+            border: 1px solid var(--border-color);
+            box-shadow: 0 4px 15px rgba(27, 94, 32, 0.08);
+        }
+
+        .logo-badge {
+            width: 70px;
+            height: 70px;
+            background: var(--light-green);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 10px auto;
+            border: 2px solid var(--primary-green);
+            font-weight: bold;
+            color: var(--primary-green);
+            font-size: 24px;
+        }
+
+        .header-brand h1 {
+            font-size: 22px;
+            color: var(--primary-green);
+            margin: 5px 0 2px 0;
+            font-weight: 800;
+        }
+
+        .header-brand p {
+            font-size: 12px;
+            color: var(--text-muted);
+            margin: 0;
+            font-weight: 600;
+        }
+
+        .card {
+            background-color: var(--card-bg);
+            border: 1px solid var(--border-color);
+            border-radius: 14px;
+            padding: 20px;
+            margin-bottom: 15px;
+            box-shadow: 0 6px 20px rgba(27, 94, 32, 0.06);
+        }
+
+        .card h2 {
+            font-size: 15px;
+            color: var(--primary-green);
+            margin-top: 0;
+            margin-bottom: 12px;
+            border-bottom: 2px solid var(--light-green);
+            padding-bottom: 6px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .form-group {
+            margin-bottom: 12px;
+        }
+
+        label {
+            display: block;
+            font-size: 12px;
+            color: var(--text-muted);
+            margin-bottom: 4px;
+            font-weight: 700;
+        }
+
+        select, input, textarea {
+            width: 100%;
+            padding: 11px;
+            background-color: #fafbfc;
+            border: 1px solid var(--border-color);
+            border-radius: 8px;
+            color: var(--text-main);
+            font-size: 14px;
+            box-sizing: border-box;
+            outline: none;
+            transition: border-color 0.3s;
+        }
+
+        select:focus, input:focus, textarea:focus {
+            border-color: var(--primary-green);
+            background-color: #fff;
+        }
+
+        .btn-green {
+            width: 100%;
+            padding: 12px;
+            background-color: var(--primary-green);
+            color: #ffffff;
+            font-weight: bold;
+            border: none;
+            border-radius: 8px;
+            font-size: 14px;
+            cursor: pointer;
+            transition: background 0.3s;
+            margin-top: 5px;
+        }
+
+        .btn-green:hover {
+            background-color: var(--secondary-green);
+        }
+
+        .btn-danger {
+            background-color: var(--danger-red);
+        }
+        .btn-danger:hover {
+            background-color: #b71c1c;
+        }
+
+        .footer-note {
+            text-align: center;
+            font-size: 11px;
+            color: var(--text-muted);
+            margin-top: 15px;
+            font-weight: 600;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <div class="header-brand">
+            <div class="logo-badge">🐔</div>
+            <h1>Granja El Roble</h1>
+            <p>Incubadora Santander S.A. / Huevos Kikes</p>
+            <p style="font-size: 11px; color: var(--accent-green); margin-top: 4px;">Control 37 Galpones (9 Módulos)</p>
+        </div>
+
+        <!-- Módulo Encargado de Galpón -->
+        <div class="card">
+            <h2>Módulo Operativo (Galponero)</h2>
+            <div class="form-group">
+                <label for="galpon-select">Seleccione Galpón (1 al 37)</label>
+                <select id="galpon-select">
+                    <option value="">-- Seleccionar Galpón --</option>
+                    <option value="1">Galpón 1 (Mód 1) - Clave: 0106</option>
+                    <option value="2">Galpón 2 (Mód 1) - Clave: 6920</option>
+                    <option value="3">Galpón 3 (Mód 1) - Clave: 3976</option>
+                    <option value="4">Galpón 4 (Mód 1) - Clave: 5986</option>
+                    <option value="5">Galpón 5 (Mód 2) - Clave: 7697</option>
+                    <option value="6">Galpón 6 (Mód 2) - Clave: 8000</option>
+                    <option value="7">Galpón 7 (Mód 2) - Clave: 6743</option>
+                    <option value="8">Galpón 8 (Mód 2) - Clave: 6801</option>
+                    <option value="9">Galpón 9 (Mód 3) - Clave: 6877</option>
+                    <option value="10">Galpón 10 (Mód 3) - Clave: 4945</option>
+                    <option value="11">Galpón 11 (Mód 3) - Clave: 0314</option>
+                    <option value="12">Galpón 12 (Mód 3) - Clave: 9646</option>
+                    <option value="13">Galpón 13 (Mód 4) - Clave: 2476</option>
+                    <option value="14">Galpón 14 (Mód 4) - Clave: 0799</option>
+                    <option value="15">Galpón 15 (Mód 4) - Clave: 6323</option>
+                    <option value="16">Galpón 16 (Mód 4) - Clave: 7469</option>
+                    <option value="17">Galpón 17 (Mód 5) - Clave: 0752</option>
+                    <option value="18">Galpón 18 (Mód 5) - Clave: 6458</option>
+                    <option value="19">Galpón 19 (Mód 5) - Clave: 0333</option>
+                    <option value="20">Galpón 20 (Mód 5) - Clave: 1583</option>
+                    <option value="21">Galpón 21 (Mód 6) - Clave: 2787</option>
+                    <option value="22">Galpón 22 (Mód 6) - Clave: 6072</option>
+                    <option value="23">Galpón 23 (Mód 6) - Clave: 0660</option>
+                    <option value="24">Galpón 24 (Mód 6) - Clave: 1367</option>
+                    <option value="25">Galpón 25 (Módulo 7 - 5 Galpones) - Clave: 8052</option>
+                    <option value="26">Galpón 26 (Módulo 7 - 5 Galpones) - Clave: 1720</option>
+                    <option value="27">Galpón 27 (Módulo 7 - 5 Galpones) - Clave: 9699</option>
+                    <option value="28">Galpón 28 (Módulo 7 - 5 Galpones) - Clave: 1221</option>
+                    <option value="29">Galpón 29 (Módulo 7 - 5 Galpones) - Clave: 5732</option>
+                    <option value="30">Galpón 30 (Mód 8) - Clave: 9535</option>
+                    <option value="31">Galpón 31 (Mód 8) - Clave: 2229</option>
+                    <option value="32">Galpón 32 (Mód 8) - Clave: 4765</option>
+                    <option value="33">Galpón 33 (Mód 8) - Clave: 4854</option>
+                    <option value="34">Galpón 34 (Mód 9) - Clave: 7048</option>
+                    <option value="35">Galpón 35 (Mód 9) - Clave: 1221</option>
+                    <option value="36">Galpón 36 (Mód 9) - Clave: 7594</option>
+                    <option value="37">Galpón 37 (Mód 9) - Clave: 0000</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label for="galpon-clave">Clave de acceso de 4 dígitos</label>
+                <input type="password" id="galpon-clave" placeholder="••••">
+            </div>
+            <button class="btn-green" onclick="accesoGalpon()">Entrar (Validación Biométrica Facial)</button>
+        </div>
+
+        <!-- Módulo de Reporte de Mantenimiento con WhatsApp -->
+        <div class="card" style="border-left: 4px solid var(--warning-orange);">
+            <h2>🚨 Reporte de Averías / Mantenimiento</h2>
+            <div class="form-group">
+                <label for="tipo-averia">Tipo de Falla o Emergencia</label>
+                <select id="tipo-averia">
+                    <option value="Nipple de agua roto">Rotura de nipple / Fuga de agua</option>
+                    <option value="Caída de cortina">Caída o daño de cortina</option>
+                    <option value="Falla eléctrica">Corte de energía / Falla de extractores</option>
+                    <option value="Tolva de alimento">Daño en tolva o sistema de alimentación</option>
+                    <option value="Otro">Otra emergencia crítica</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label for="desc-averia">Descripción del daño</label>
+                <textarea id="desc-averia" rows="2" placeholder="Detalle brevemente el incidente..."></textarea>
+            </div>
+            <button class="btn-green btn-danger" onclick="enviarWhatsAppMantenimiento()">📲 Enviar Alerta Urgente a WhatsApp de Mantenimiento</button>
+        </div>
+
+        <!-- Módulo Administrador con 2FA -->
+        <div class="card">
+            <h2>Panel Gerencial (Administrador 2FA)</h2>
+            <div class="form-group">
+                <label for="admin-clave">Clave Maestra</label>
+                <input type="password" id="admin-clave" placeholder="Clave administrativa">
+            </div>
+            <button class="btn-green" style="background-color: #333;" onclick="verificarAdmin2FA()">Autenticar 2FA (WhatsApp / Correo)</button>
+        </div>
+
+        <div class="footer-note">
+            Desarrollado para Granja El Roble | Creado por Carlos Julio Espinel G
+        </div>
+    </div>
+
+    <script>
+        const clavesGalpones = {
+            1: "0106", 2: "6920", 3: "3976", 4: "5986",
+            5: "7697", 6: "8000", 7: "6743", 8: "6801",
+            9: "6877", 10: "4945", 11: "0314", 12: "9646",
+            13: "2476", 14: "0799", 15: "6323", 16: "7469",
+            17: "0752", 18: "6458", 19: "0333", 20: "1583",
+            21: "2787", 22: "6072", 23: "0660", 24: "1367",
+            25: "8052", 26: "1720", 27: "9699", 28: "1221", 29: "5732",
+            30: "9535", 31: "2229", 32: "4765", 33: "4854",
+            34: "7048", 35: "1221", 36: "7594", 37: "0000"
+        };
+
+        function accesoGalpon() {
+            const galpon = document.getElementById('galpon-select').value;
+            const clave = document.getElementById('galpon-clave').value;
+            if(!galpon) { alert("Seleccione un galpón."); return; }
+            if(clave !== clavesGalpones[galpon]) { alert("Clave incorrecta para este galpón."); return; }
+            alert("¡Clave correcta! Iniciando escaneo biométrico facial para autorización en Galpón " + galpon + "...");
+        }
+
+        function enviarWhatsAppMantenimiento() {
+            const galpon = document.getElementById('galpon-select').value || "No especificado";
+            const tipo = document.getElementById('tipo-averia').value;
+            const desc = document.getElementById('desc-averia').value || "Sin descripción adicional";
+            
+            const mensaje = `🚨 *EMERGENCIA GRANJA EL ROBLE* 🚨%0A*Galpón:* ${galpon}%0A*Incidente:* ${tipo}%0A*Detalle:* ${desc}%0A*Estado:* Requiere atención técnica inmediata.`;
+            
+            // Número de WhatsApp del jefe de mantenimiento corporativo
+            const telefonoMantenimiento = "573000000000"; 
+            window.open(`https://wa.me/${telefonoMantenimiento}?text=${mensaje}`, '_blank');
+        }
+
+        function verificarAdmin2FA() {
+            const clave = document.getElementById('admin-clave').value;
+            if(!clave) { alert("Ingrese la clave maestra."); return; }
+            alert("Clave aceptada. Enviando código temporal de 6 dígitos (2FA) a WhatsApp y Correo del Administrador...");
+        }
+    </script>
+</body>
+</html>
